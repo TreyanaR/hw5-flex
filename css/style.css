@@ -36,3 +36,141 @@ flex-direction: column;
     padding: 20px 0px;
     border-radius: 50px 50px 0px 0px;
 }
+
+/*Setting flex direction of the cards and aligning them horizontally*/
+.pricing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+
+}
+
+/*Setting initial flex size, ensuring the card takes up 100% of its container, and the max space it is allowed to take up is 450px so its not from screen to screen*/ 
+
+.card{
+    flex-basis:450px;
+    width:100% ;
+    max-width: 450px;
+    
+}
+
+/*Adding border aroung gallery class images, along with the margin and width requirements*/
+
+.gallery img{
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    max-width: 300px;
+   
+}
+/*adding glex container on gallery class , justify in center, and make sure it wraps for when you expand the screen*/
+
+
+.gallery{
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+/*900px and up view*/
+
+@media screen and (min-width: 900px){
+
+
+/*Realiging the header and nav links horizontally with flex, making sure they are on the outermost edge from eachother*/
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: row;
+
+}
+
+/*Setting flex direction of the cards and centering them vertically*/
+.pricing{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*Setting initial flex size, ensuring the card takes up 100% of its container, and the max space it is allowed to take up is 275px so its not from screen to screen*/ 
+.card{
+    flex-basis:275px ;
+    width:100% ;
+    max-width: 275px;
+
+}
+/*Setting initial header to be in the same position even when scrolled, and making sure it takes up the width of the screen when doing so*/
+
+body > header {
+    position: fixed;
+    width: 100%;
+}
+
+/*Reduced motion adjustments*/
+
+@media (prefers-reduced-motion: reduce) {
+   #logo {
+        animation: none;
+        transition: none; 
+    }
+
+}
+}
+
+/*Print screen view*/
+
+@media print{
+
+/*Setting desired font and backup font, along with removing the background image*/
+
+body{
+    font-family: Arial, Helvetica;
+    background-image: none;
+}
+
+/*Playing with the header and nav links to try to achieve the desired look with the image on top, and the links below spaced evenly*/
+
+header{
+    display: flex;
+    width: 100%; /*trying to figure out a way for the nav links to take up all the space within the width of the header, without the image doing the same?*/
+
+}
+header .nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*Aligning flex items horizontally and making sure they align on the bottom*/
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/*Adding the suggested border and flex basis to the card class*/
+
+.card{
+    border: solid 2px #45addd;
+    flex-basis: 325px;
+   
+}
+
+/*Remove gallery from display*/
+
+.gallery{
+    display: none;
+}
+
+
+
+
+}
+
