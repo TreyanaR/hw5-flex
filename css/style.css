@@ -1,3 +1,24 @@
+/*Naming the animation and duration*/
+
+#logo{
+   animation: expand 5s infinite; 
+}
+
+/*Setting the actions for the anaimation to go from non visbility small to visibly wide*/
+@keyframes expand{
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to{
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+
+
+
 /*Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
 
 body{
@@ -116,7 +137,6 @@ body > header {
 @media (prefers-reduced-motion: reduce) {
    #logo {
         animation: none;
-        transition: none; 
     }
 
 }
